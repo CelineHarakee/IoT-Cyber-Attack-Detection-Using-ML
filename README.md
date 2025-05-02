@@ -34,7 +34,7 @@ We used the [CIC-IoT2023 Dataset](https://www.unb.ca/cic/datasets/iotdataset-202
 - Balanced dataset using **SMOTE** to fix class imbalance
 - Reduced dimensionality using **PCA** (Principal Component Analysis)
 
-### Tools Used:
+#### Tools Used:
 - `pandas`, `numpy`
 - `scikit-learn`
 - `imbalanced-learn` (SMOTE)
@@ -44,14 +44,18 @@ We used the [CIC-IoT2023 Dataset](https://www.unb.ca/cic/datasets/iotdataset-202
 
 ### Phase 2: ML Modeling & Evaluation
 
-### Supervised Models Trained:
+#### Supervised Models Trained:
 - Random Forest
 - Support Vector Machine (SVM)
 - XGBoost
 - Multilayer Perceptron (MLP - Neural Network)
 - Convolutional Neural Network (CNN)
 
-### Tools Used:
+#### Unsupervised Models Trained:
+- Autoencoder (deep learning)
+- Isolation Forest (anomaly detection)
+
+#### Tools Used:
 - `scikit-learn`
 - `XGBoost`, `LightGBM`
 - `TensorFlow` / `Keras`
@@ -73,21 +77,37 @@ Run the notebook step by step:
 ``` bash
 notebooks/FINAL FILE NAME.ipynb 
 ```
-</br> 
-This notebook includes:
-
-- Data loading
-- Data cleaning
-- Feature engineering
-- Label encoding
-- Feature scaling
-- SMOTE for class balancing
-
-  
 --- 
 ## Features
+This project performs intelligent intrusion detection on IoT network traffic using machine learning. Key features include:
+- **Data Cleaning & Preprocessing**
+  - Handled missing values (cleaned columns with NaNs).
+  - Applied Z-score normalization using StandardScaler.
+- **Feature Engineering**
+  - Encoded attack labels: Benign, DDoS, Injection, Recon.
+  - Balanced data with SMOTE to address class imbalance.
+  - Reduced feature dimensionality using PCA.
+- **Model Training**
+  - Trained and compared four supervised ML models: Random Forest, Support Vector Machine (SVM), XGBoost, Multilayer Perceptron (MLP).
+  - Implemented optional unsupervised anomaly detection: Isolation Forest, Autoencoder (Keras).
+- **Evaluation Metrics**
+  - Used Precision, Recall, F1-score, and Accuracy for model comparison.
+  - Visualized performance with Confusion Matrices.
 ---
 ## Results
+Each model was evaluated on how well it detects attack types using classification metrics:
+| Model                | Precision | Recall | F1-score | Accuracy |
+|----------------------|-----------|--------|----------|----------|
+| **Random Forest**     | 0.98      | 0.98   | 0.98     | 98.0%    |
+| **SVM**               | 0.97      | 0.96   | 0.96     | 96.5%    |
+| **XGBoost**           | 0.98      | 0.97   | 0.97     | 97.0%    |
+| **MLP Neural Network**| 0.97      | 0.97   | 0.97     | 97.2%    |
+
+#### Insights:
+- **Random Forest** performed consistently across both frequent and rare attack types.
+- **SVM** was fast and effective but struggled slightly with rare class detection.
+- **XGBoost** provided great generalization and fast training.
+- **MLP** learned complex patterns well and matched XGBoost’s performance.
 ---
 ## Team
 - [Celine Al Harake](https://github.com/CelineHarakee)
