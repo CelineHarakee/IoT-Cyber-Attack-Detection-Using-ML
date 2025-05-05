@@ -75,7 +75,7 @@ pip install -r requirements.txt
 ## How to Run
 Run the notebook step by step: 
 ``` bash
-notebooks/FINAL FILE NAME.ipynb 
+notebooks/ML_Final_Project_Code.ipynb 
 ```
 --- 
 ## Features
